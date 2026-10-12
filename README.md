@@ -105,24 +105,3 @@ measures the cost of the guarantee: the `×Or.` column in Table 1 and Figure 8 a
 Auxiliary randomized intervention Y(A_σ), A_σ ~ g_σ, nominal 1 − α_sm = 0.92
 (checks Theorem 5): weighted CP at level α_sm without robustness, compared with
 the robust levels α_ρ and α′.
-
-## Experiments and outputs (written to `results/` when you run)
-
-| File | Content |
-|---|---|
-| `fig1_illustration` | one draw: the interval each method returns at a*, against the true Y(a*), for each x |
-| `fig2_confounding` | coverage / finite rate / width vs η (main result) |
-| `fig3_auxiliary_theorem5` | Theorem 5 check: coverage of Y(A_σ) vs η |
-| `fig4_bandwidth` | σ sweep, including the width split into 2·t̄ and 2·e_r |
-| `fig5_calibration_size` | n_c sweep: finiteness (Prop. 9) and the width floor that remains |
-| `fig6_sensitivity_misspecification` | true η = 0.6 (valid ρ = 0.75), assumed ρ swept: stress test |
-| `fig8_coverage_width_tradeoff` | coverage vs width for every method at η = 0.2/0.4/0.6, compared with the oracle (cost of conservatism) |
-| `fig7_propensity_estimation` | cost of estimating π: certified M, α_ρ and width vs training size, compared with oracle π |
-| `table1_confounding.tex` | main table: coverage (Monte Carlo SE), finite-interval rate, width given finite, width / oracle width; red = significantly below 0.9 |
-| `table2_auxiliary_theorem5.tex` | Theorem 5 table |
-| `table3_supplied_constants.tex` | M, ρ, Λ, r, L_Y, L_φ, e_r, α_ρ, α′, W, n_eff, w̄ at the default setting |
-| `summary.csv`, `all_replicates.csv.gz` | every number behind the figures |
-| `results_overview.md` | readable pivot tables |
-| `experiment_settings.json` | all settings, seed, versions, runtime |
-
-Tables need `\usepackage{booktabs}` and `\usepackage[table]{xcolor}`.
