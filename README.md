@@ -126,27 +126,3 @@ the robust levels α_ρ and α′.
 | `experiment_settings.json` | all settings, seed, versions, runtime |
 
 Tables need `\usepackage{booktabs}` and `\usepackage[table]{xcolor}`.
-
-## Scope notes (for writing the paper)
-
-* **Coverage** means marginal coverage averaged over replicates (calibration draws)
-  and new subjects, exactly as in eq. (28). The band around each line is ±1.96 Monte
-  Carlo SE across replicates.
-* **Infinite intervals count as covering.** Width is averaged over finite intervals
-  only, and the finite-interval rate is always reported next to it (Section 6).
-* **How coverage is computed.** In each replicate, fresh train / calibration / test
-  samples are drawn independently. Coverage is the fraction of the 500 test subjects
-  whose *true* Y_new(a*) (same U and ε, dose set to a*) lies in the interval. The
-  reported number is the mean over replicates, with SE = sd/√reps.
-* **M is an oracle-aided certificate.** It is computed from the known true propensity
-  over the whole support (all x, all a ∈ [0,40]), not from training residuals. Say this
-  in the paper: in practice M must be supplied.
-* **M, ρ, Λ, L_Y** are *supplied* in the paper. Here they are certified from the
-  known simulation truth so that the theorems' hypotheses hold exactly. Figure 6 is
-  a deliberate misspecification stress test, not a guarantee.
-* **MIMIC-III / TCGA are not included.** MIMIC-III needs credentialed PhysioNet access
-  plus the MIMIC-Extract `all_hourly_data.h5`. Even in Schröder et al. the MIMIC
-  outcome is semi-synthetic (a linear function of covariates + treatment), and their
-  repository contains no TCGA data. A real-data run cannot certify M, ρ or measure
-  true potential-outcome coverage. It could only report interval widths under assumed
-  sensitivity values.
